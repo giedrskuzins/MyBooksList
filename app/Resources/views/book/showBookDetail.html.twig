@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Apie knygą{% endblock %}
+
+{% block body %}
+{% block navigation %}
+{% endblock %}
+<div class="container">
+    <div>
+        <h3>Apie knygą</h3>
+    </div>
+    <table class="table table-striped table-hover">
+
+    <tr>
+        <td>ID</td>
+        <td>{{ book.id }}</td>
+
+    </tr>
+    <tr>
+        <td>Pavadinimas</td>
+        <td>{{ book.title }}</td>
+    </tr>
+    <tr>
+        <td>Metai</td>
+        <td>{{ book.permitYear }}</td>
+    </tr>
+    <tr>
+        <td>Žanras</td>
+        <td>{{ book.genre.title }}</td>
+    </tr>
+    <tr>
+        <td>Autorius (iai)</td>
+        <td>
+            {% set loopNum = 0 %}
+            {% for author in authors %}
+                {{author.name}} {{author.surname}}
+                {% if loopNum < authors|length %}
+                    </br>
+                {% endif %}
+                {% set loopNum = loopNum+1 %}
+            {% endfor %}
+
+
+        </td>
+    </tr>
+
+    </table>
+</div>
+{%endblock%}

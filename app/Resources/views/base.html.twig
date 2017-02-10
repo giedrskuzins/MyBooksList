@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>{% block title %}Knygų sąrašas{% endblock %}</title>
+        {% block stylesheets %}
+            <link rel="stylesheet" href="{{ asset('css/bootsrap/bootstrap-3.3.7-dist/css/bootstrap.min.css') }}">
+            
+        {% endblock %}
+        {% block javascripts1 %}
+        <a href="../../../src/AppBundle/Controller/BookController.php"></a>
+            <script src="{{ asset('js/jquery-2.1.1.min.js') }}"></script>
+            
+             
+        {% endblock %}
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+    </head>
+    <body>
+        
+        {% block navigation %}
+        <nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="" href="{{ path('ShowAllBooks') }}"><span class="glyphicon glyphicon-home navbar-brand"></span></a>
+                </div>
+                <ul class="nav navbar-nav">
+                   <li class=""><a href="{{ path('ShowAllBooks') }}">Mano knygos</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    
+                </ul>
+            </div>
+        </nav>
+    {% endblock %}
+        
+        {% block body %}{% endblock %}
+        </br></br></br>
+        <hr>
+        <footer class="footer">
+            <div class="container">
+                <p class="text-muted">&#169; 2017</p>
+            </div>
+        </footer>
+        {% block javascripts2 %}{% endblock %}
+    </body>
+</html>

@@ -1,0 +1,46 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+//use Doctrine\Common\Collections\ArrayCollection;
+//use Symfony\Component\Validator\Constraints as Assert;
+
+/**
+ * @ORM\Entity(repositoryClass="AppBundle\Repository\AuthorRepository")
+ * @ORM\Table(name="authors")
+ *
+ */
+class Author
+{
+	/**
+     * @var int
+     *
+     * @ORM\Id
+	 * @ORM\GeneratedValue
+     * @ORM\Column(type="integer")
+     */
+    private $id;
+	
+	/**
+     * @var string
+     *
+     * @ORM\Column(type="string", length=50)
+     * 
+     */
+    private $name;
+	
+	/**
+     * @var string
+     *
+     * @ORM\Column(type="string", length=50)
+     * 
+     */
+    private $surname;
+	
+	//public function __construct()
+	//{
+		//$this->authors = new ArrayCollection();
+	//}
+	
+}

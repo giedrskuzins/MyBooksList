@@ -1,0 +1,61 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+//use Doctrine\Common\Collections\ArrayCollection;
+//use Symfony\Component\Validator\Constraints as Assert;
+
+/**
+ * @ORM\Entity(repositoryClass="AppBundle\Repository\BookRepository")
+ * @ORM\Table(name="books")
+ *
+ */
+class Book
+{
+	/**
+     * @var int
+     *
+     * @ORM\Id
+	 * @ORM\GeneratedValue
+     * @ORM\Column(type="integer")
+     */
+    private $id;
+	
+	/**
+     * @var string
+     *
+     * @ORM\Column(type="string")
+     * 
+     */
+    private $title;
+	
+	/**
+     * @var string
+     *
+     * @ORM\Column(type="string")
+     * 
+     */
+    private $permitYear;
+	
+	/**
+     * @var Genre
+     *
+     * @ORM\ManyToOne(
+     *      targetEntity="Genre"
+     * )
+     * 
+     */
+    private $genre;
+	
+    /**
+     * @var array
+     *
+     * @ORM\Column(type="array", nullable=true)
+     * 
+     */
+    private $authors;
+
+	
+
+}
