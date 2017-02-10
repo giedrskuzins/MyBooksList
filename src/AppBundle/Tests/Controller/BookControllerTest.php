@@ -22,6 +22,51 @@ class BookControllerTest extends WebTestCase
         );
     }
     
+    public function testShowAllBooksClickLink()
+    {
+        $client = static::createClient();
+
+        $crawler = $client->request('GET', '/');
+
+        $this->assertEquals(200, $client->getResponse()->getStatusCode());
+        
+        $link = $crawler->selectLink('title 2')->link();
+        $crawler = $client->click($link);
+        $this->assertGreaterThan(
+            0,
+            $crawler->filter('html:contains("Apie knygą")')->count()
+        );
+        
+    }
+    
+    public function testShowAllBooksClickSearch()
+    {
+        $client = static::createClient();
+
+        $crawler = $client->request('GET', '/');
+
+        $this->assertEquals(200, $client->getResponse()->getStatusCode());
+        
+        $buttonCrawlerNode = $crawler->selectButton('searchButton');
+        $form = $buttonCrawlerNode->form();
+        
+        $form['search[searchField]'] = 'title 2';
+              
+        $crawler = $client->submit($form);
+        
+        $this->assertEquals(200, $client->getResponse()->getStatusCode());
+        
+        $this->assertGreaterThan(
+            0,
+            $crawler->filter('html:contains("title 2")')->count()
+        );
+        
+        $this->assertGreaterThan(
+            0,
+            $crawler->filter('html:contains("Viso:1")')->count()
+        );        
+    }
+    
     public function testShowBookDetail()
     {
         $client = static::createClient();
