@@ -11,7 +11,7 @@ use AppBundle\Form\SearchType;
 class BookController extends Controller
 {
     /**
-     * @Route("/ShowAllBooks", name="ShowAllBooks")
+     * @Route("/", name="ShowAllBooks")
      */
     public function showAllBooksAction(Request $request)
     {
