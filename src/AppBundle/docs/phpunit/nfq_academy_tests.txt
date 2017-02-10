@@ -1,0 +1,4 @@
+
+
+//D:\reikalinga\duomenys\Dropbox\Dropbox\tmp\projects\util
+php phpunit-4.8.34.phar -c D:\reikalinga\duomenys\Dropbox\Dropbox\tmp\projects\nfq_academy_books\nfq_academy_books\MyBooksList\app  D:\reikalinga\duomenys\Dropbox\Dropbox\tmp\projects\nfq_academy_books\nfq_academy_books\MyBooksList\src\AppBundle\
