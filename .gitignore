@@ -13,3 +13,4 @@
 /AppBundle/docs/*
 /web/files/documents/*
 /AppBundle/DataFixtures/*
+/nbproject/
